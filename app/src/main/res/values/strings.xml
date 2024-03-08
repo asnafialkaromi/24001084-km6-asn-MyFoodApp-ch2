@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MyFoodApp</string>
+    <string name="text_name">Hai, Asnafi</string>
+    <string name="text_greetings">Hari ini kamu mau makan apa</string>
+    <string name="text_search_navigation">Cari makanan favoritmu disini</string>
+    <string name="text_category">Kategori</string>
+    <string name="text_recomendation">Rekomendasi</string>
+    <string name="text_menu_title">Nasi Goreng</string>
+    <string name="text_menu_price">Rp. 15000</string>
+    <string name="text_category_name">Nasi</string>
+    <string name="text_rating">4,9</string>
+    <string name="text_search_hint">Cari makanan favoritmu disini</string>
+    <string name="text_banner_titles">Diskon hingga 65%</string>
+    <string name="text_banner_details">Ayo beli makanan sekarang dan nikmati diskon yang tersedia</string>
 </resources>

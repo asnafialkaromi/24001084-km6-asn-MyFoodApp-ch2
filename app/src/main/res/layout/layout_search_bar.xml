@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/iv_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_search_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="12dp"/>
+
+    <SearchView
+        android:id="@+id/sv_search_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:maxLines="1"
+        android:queryHint="@string/text_search_hint"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@color/transparent"
+        app:layout_constraintTop_toTopOf="@id/iv_search_bar"
+        app:layout_constraintBottom_toBottomOf="@id/iv_search_bar"
+        app:layout_constraintStart_toStartOf="@id/iv_search_bar"
+        app:layout_constraintEnd_toEndOf="@id/iv_search_bar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,10 @@
-package com.example.myfoodapp
+package com.example.myfoodapp.presentation.categorylist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myfoodapp.data.model.Category
 import com.example.myfoodapp.databinding.ItemCategoryBinding
-import com.example.myfoodapp.model.Category
 
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 

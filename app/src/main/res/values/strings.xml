@@ -4,7 +4,7 @@
     <string name="text_greetings">Hari ini kamu mau makan apa</string>
     <string name="text_search_navigation">Cari makanan favoritmu disini</string>
     <string name="text_category">Kategori</string>
-    <string name="text_recomendation">Rekomendasi</string>
+    <string name="text_menu">Menu</string>
     <string name="text_menu_title">Nasi Goreng</string>
     <string name="text_menu_price">Rp. 15000</string>
     <string name="text_category_name">Nasi</string>
@@ -12,4 +12,24 @@
     <string name="text_search_hint">Cari makanan favoritmu disini</string>
     <string name="text_banner_titles">Diskon hingga 65%</string>
     <string name="text_banner_details">Ayo beli makanan sekarang dan nikmati diskon yang tersedia</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_title_detail">Nasi Goreng</string>
+    <string name="text_rating_detail">4,8</string>
+    <string name="text_price_detail">Rp. 20,000.00</string>
+    <string name="text_desc_detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="text_decs_location_detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</string>
+    <string name="text_detail_title">Nasi Goreng</string>
+    <string name="text_detail_rating">4,8</string>
+    <string name="text_detail_price">Rp. 20,000.00</string>
+    <string name="text_detail_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="text_detail_location">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</string>
+    <string name="text_detail_button">Tambah ke Keranjang - </string>
+    <string name="menu_home">Home</string>
+    <string name="menu_cart">Cart</string>
+    <string name="menu_profile">Profile</string>
+    <string name="text_location">Lokasi</string>
+    <string name="text_qty">1</string>
+    <string name="text_min">-</string>
+    <string name="text_plus">+</string>
 </resources>

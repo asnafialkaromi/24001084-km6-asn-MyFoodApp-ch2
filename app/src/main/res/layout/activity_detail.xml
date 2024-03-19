@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <FrameLayout
+    <!--<FrameLayout
         android:id="@+id/fl_header"
         android:layout_width="match_parent"
         android:layout_height="220dp"
@@ -31,29 +31,42 @@
             android:padding="6dp"
             />
 
-    </FrameLayout>
+    </FrameLayout>-->
+
+
+    <include
+        android:id="@+id/layout_top_detail"
+        layout="@layout/layout_top_detail"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/fl_header"
+        app:layout_constraintTop_toBottomOf="@id/layout_top_detail"
         app:layout_constraintBottom_toTopOf="@id/layout_bottom_detail"
-        android:layout_marginVertical="12dp"
-        android:clipToPadding="false">
+        android:translationZ="-1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:background="@drawable/bg_my_button_outline"
-            android:backgroundTint="@color/white">
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp">
+
+            <ImageView
+                android:id="@+id/iv_menu_image"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_fried_rice"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
 
             <include
                 android:id="@+id/layout_content_detail"
                 layout="@layout/layout_content_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_menu_image"
                 android:layout_margin="12dp" />
 
 

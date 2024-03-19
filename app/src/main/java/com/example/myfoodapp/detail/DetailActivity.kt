@@ -26,8 +26,7 @@ class DetailActivity : AppCompatActivity() {
 
     private var qty: Int = 1
     private var amount: Double = 0.0
-    private var latitude: String = ""
-    private var longitude: String = ""
+    private var mapLink: String = ""
 
     private val binding: ActivityDetailBinding by lazy {
         ActivityDetailBinding.inflate(layoutInflater)
@@ -50,9 +49,8 @@ class DetailActivity : AppCompatActivity() {
             binding.layoutLocation.tvDetailLocation.text = it.location
             "Tambah ke Keranjang - ${it.price.toIndonesianFormat()}".also { binding.layoutBottomDetail.btnAddToCart.text = it }
             amount = it.price
+            mapLink = it.mapLink
 
-            latitude = it.latitude.toString()
-            longitude = it.longitude.toString()
         }
     }
 
@@ -75,18 +73,18 @@ class DetailActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnBack.setOnClickListener {
+        binding.layoutTopDetail.btnBack.setOnClickListener {
             onBackPressed()
         }
 
         binding.layoutLocation.tvDetailLocation.setOnClickListener {
-            setPinLocationMap(latitude,longitude)
+            setPinLocationMap(mapLink)
         }
     }
 
 
-    private fun setPinLocationMap(latitude: String, longitude: String){
-        val mapUri = Uri.parse("geo:$latitude,$longitude")
+    private fun setPinLocationMap(mapLink: String){
+        val mapUri = Uri.parse(mapLink)
         val intent = Intent(Intent.ACTION_VIEW, mapUri)
         startActivity(intent)
     }

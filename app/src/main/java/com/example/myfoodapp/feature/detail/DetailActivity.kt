@@ -1,4 +1,4 @@
-package com.example.myfoodapp.detail
+package com.example.myfoodapp.feature.detail
 
 import android.content.Context
 import android.content.Intent
@@ -12,7 +12,6 @@ import com.example.myfoodapp.utils.toIndonesianFormat
 class DetailActivity : AppCompatActivity() {
 
     companion object {
-
 
 
         const val EXTRAS_DETAIL_DATA = "EXTRAS_DETAIL_DATA"
@@ -47,20 +46,24 @@ class DetailActivity : AppCompatActivity() {
             binding.layoutContentDetail.tvRating.text = it.rating.toString()
             binding.layoutContentDetail.tvDescription.text = it.description
             binding.layoutLocation.tvDetailLocation.text = it.location
-            "Tambah ke Keranjang - ${it.price.toIndonesianFormat()}".also { binding.layoutBottomDetail.btnAddToCart.text = it }
+            "Tambah ke Keranjang - ${it.price.toIndonesianFormat()}".also {
+                binding.layoutBottomDetail.btnAddToCart.text = it
+            }
             amount = it.price
             mapLink = it.mapLink
 
         }
     }
 
-    private fun onClickAction(){
+    private fun onClickAction() {
         binding.layoutBottomDetail.btnPlus.setOnClickListener {
             qty++
             val finalPrice: Double = qty * amount
             binding.layoutBottomDetail.tvCounter.text = qty.toString()
             binding.layoutBottomDetail.btnAddToCart.text = finalPrice.toIndonesianFormat()
-            "Tambah ke Keranjang - ${finalPrice.toIndonesianFormat()}".also { binding.layoutBottomDetail.btnAddToCart.text = it }
+            "Tambah ke Keranjang - ${finalPrice.toIndonesianFormat()}".also {
+                binding.layoutBottomDetail.btnAddToCart.text = it
+            }
         }
 
         binding.layoutBottomDetail.btnMin.setOnClickListener {
@@ -69,7 +72,9 @@ class DetailActivity : AppCompatActivity() {
                 binding.layoutBottomDetail.tvCounter.text = qty.toString()
                 val finalPrice: Double = qty * amount
                 binding.layoutBottomDetail.tvCounter.text = qty.toString()
-                "Tambah ke Keranjang - ${finalPrice.toIndonesianFormat()}".also { binding.layoutBottomDetail.btnAddToCart.text = it }
+                "Tambah ke Keranjang - ${finalPrice.toIndonesianFormat()}".also {
+                    binding.layoutBottomDetail.btnAddToCart.text = it
+                }
             }
         }
 
@@ -83,7 +88,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
 
-    private fun setPinLocationMap(mapLink: String){
+    private fun setPinLocationMap(mapLink: String) {
         val mapUri = Uri.parse(mapLink)
         val intent = Intent(Intent.ACTION_VIEW, mapUri)
         startActivity(intent)

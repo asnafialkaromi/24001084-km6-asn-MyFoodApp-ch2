@@ -33,4 +33,5 @@
     <string name="text_min">-</string>
     <string name="text_plus">+</string>
     <string name="text_detail">Detail Menu</string>
+    <string name="text_history">History</string>
 </resources>

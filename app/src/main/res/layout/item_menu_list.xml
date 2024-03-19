@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="12dp"
     android:layout_margin="8dp"
-    android:elevation="2dp">
+    android:elevation="2dp"
+    app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:src="@drawable/img_fried_rice"
             app:layout_constraintDimensionRatio="16:9"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_menu_name"
@@ -33,9 +33,9 @@
             android:text="@string/text_menu_title"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/iv_menu_image"
             app:layout_constraintEnd_toEndOf="@+id/iv_menu_rating"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toEndOf="@+id/iv_menu_image"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_menu_rating"
@@ -54,14 +54,14 @@
             android:layout_below="@+id/iv_menu_image"
             android:layout_alignParentEnd="true"
             android:layout_marginHorizontal="12dp"
-            android:textAlignment="center"
-            app:flow_verticalAlign="center"
-            android:textSize="12sp"
             android:text="@string/text_rating"
+            android:textAlignment="center"
+            android:textSize="12sp"
             android:textStyle="bold"
+            app:flow_verticalAlign="center"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_menu_rating"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/iv_menu_rating"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_menu_rating"/>
+            app:layout_constraintTop_toTopOf="@+id/iv_menu_rating" />
 
         <TextView
             android:id="@+id/tv_menu_price"
@@ -71,9 +71,9 @@
             android:maxLines="1"
             android:text="@string/text_menu_price"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/tv_menu_name"
             app:layout_constraintEnd_toEndOf="@+id/tv_menu_name"
-            app:layout_constraintTop_toBottomOf="@+id/tv_menu_name"/>
+            app:layout_constraintStart_toStartOf="@+id/tv_menu_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_menu_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

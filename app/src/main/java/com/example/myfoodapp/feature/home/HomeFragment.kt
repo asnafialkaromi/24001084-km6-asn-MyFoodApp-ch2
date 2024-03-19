@@ -1,7 +1,10 @@
-package com.example.myfoodapp.main
+package com.example.myfoodapp.feature.home
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myfoodapp.R
 import com.example.myfoodapp.data.datasource.CategoryDataSource
@@ -9,17 +12,15 @@ import com.example.myfoodapp.data.datasource.CategoryDataSourceImpl
 import com.example.myfoodapp.data.datasource.MenuDataSource
 import com.example.myfoodapp.data.datasource.MenuDataSourceImpl
 import com.example.myfoodapp.data.model.Menu
-import com.example.myfoodapp.databinding.ActivityMainBinding
-import com.example.myfoodapp.detail.DetailActivity
+import com.example.myfoodapp.databinding.FragmentHomeBinding
+import com.example.myfoodapp.feature.detail.DetailActivity
 import com.example.myfoodapp.presentation.categorylist.CategoryAdapter
 import com.example.myfoodapp.presentation.menulist.MenuAdapter
 import com.example.myfoodapp.presentation.menulist.OnItemClickedListener
 
-class MainActivity : AppCompatActivity() {
+class HomeFragment : Fragment() {
 
-    private val binding: ActivityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
+    private lateinit var binding: FragmentHomeBinding
     private val dataSource: CategoryDataSource by lazy {
         CategoryDataSourceImpl()
     }
@@ -30,9 +31,17 @@ class MainActivity : AppCompatActivity() {
     private var adapterMenu: MenuAdapter? = null
     private var isUsingGridMode: Boolean = true
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        // Inflate the layout for this fragment
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setListCategory()
         bindMenuList(isUsingGridMode)
         setClickActionMenu()
@@ -62,20 +71,21 @@ class MainActivity : AppCompatActivity() {
             }
         )
         binding.layoutListMenu.rvMenuGrid.apply {
-            adapter = this@MainActivity.adapterMenu
-            layoutManager = GridLayoutManager(this@MainActivity, if (isUsingGridMode) 2 else 1)
+            adapter = this@HomeFragment.adapterMenu
+            layoutManager = GridLayoutManager(requireContext(), if (isUsingGridMode) 2 else 1)
         }
         adapterMenu?.insertData(dataSourceMenu.getMenuData())
     }
 
-    private fun navigateToDetail(item : Menu) {
-        DetailActivity.startActivity(this,item)
+    private fun navigateToDetail(item: Menu) {
+        DetailActivity.startActivity(requireContext(), item)
     }
 
     private fun setListCategory() {
         binding.rvCategory.apply {
-            adapter = this@MainActivity.adapterCategory
+            adapter = this@HomeFragment.adapterCategory
         }
         adapterCategory.insertData(dataSource.getCategoryData())
     }
+
 }
